@@ -30,6 +30,7 @@ public class Player {
         awareness=partialRandom(iq,50);
         offensiveAwareness=partialRandom(awareness,30);
         defensiveAwareness=partialRandom(awareness,30);
+       //comment
 
 
 
