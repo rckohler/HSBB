@@ -3,9 +3,12 @@ package com.dominapp.dni.hsbb;
 import java.util.Random;
 
 /**
- * Created by rck on 4/24/2015.
+ * Created by rck on 4/26/2015.
  */
-public class Player {
+import java.util.Random;
+
+public class Player_Kohler {
+    boolean debugReport = true;
     int average = 50;
     int standardDeviation = 17;
     int iq, athleticism, personality, bmi, agility, acceleration, strength, stamina, shortRange, mediumRange, longRange,
@@ -14,7 +17,7 @@ public class Player {
     boolean eligible, suspended, injured;
     Random random = new Random();
 
-    public Player() {
+    public Player_Kohler() {
         int awareness;
         double r = random.nextGaussian();
         height = (int) (70 + r * 3);
@@ -26,11 +29,11 @@ public class Player {
         showmanship=r100();
         toughness=r100();
         aggressive=r100();
-        weight=(int)((bmi*height*height)/703);
+        weight=(int)((bmi+height*height)/703);
         awareness=partialRandom(iq,50);
         offensiveAwareness=partialRandom(awareness,30);
         defensiveAwareness=partialRandom(awareness,30);
-       //comment
+        //comment
     }
 
     private int partialRandom(int firstLevelValue, int percentage){
@@ -45,6 +48,17 @@ public class Player {
         return(int)(average+r*standardDeviation);
     }
 
+    public void report(){
+        say("height" + height);
+        say("string" + weight);
+        //..
+    }
+
+    private void say(String s){
+        if(debugReport)System.out.println("Player:"+s);
+    }
+
 
 
 }
+

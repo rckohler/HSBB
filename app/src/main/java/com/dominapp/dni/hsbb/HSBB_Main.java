@@ -12,6 +12,8 @@ public class HSBB_Main extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hsbb__main);
+        Player p = new Player();
+        int x = p.acceleration;
     }
 
 
